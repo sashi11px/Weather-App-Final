@@ -12,9 +12,89 @@
       crossorigin="anonymous"
     />
 
-    <title>Document</title>
+    <title>Weather App</title>
   </head>
   <body>
+    <div class="container">
+          <div class="card">
+              <div class="card-body">
+
+    <div class="container">
+      <form id="search-city">
+        <input type="text" 
+        placeholder="Search City"
+        autocomplete="off"
+        autofocus="on" 
+        id="search-text" />
+        
+        <input type="submit" value="Search" />
+        
+      </form>
+      <br />
+      <h1 id="maincity"> </h1>
+      <h3>Tuesday Sept. 13, 2022</h3>
+    </div>
+    <div class="sun">
+      ☀️️
+    </div>
+
+    <span id="maintemp"></span>°F
+      
+
+      <br />
+      <div id="temperature-conditions">
+        <p><small>Sunny</small></p>
+      </div>
+
+      <div class="row row-2">
+        <div class="col-2">
+          Wed
+          <br />
+          80°F
+          <br />
+          ☀️️
+          <br />
+          68°F
+        </div>
+        <div class="col-2">
+          Thu
+          <br />
+          82°F
+          <br />
+          ☀️️
+          <br />
+          71°F
+        </div>
+        <div class="col-2">
+          Fri
+          <br />
+          83°F
+          <br />
+          ☀️️
+          <br />
+          73°F
+        </div>
+        <div class="col-2">
+          Sat
+          <br />
+          82°F
+          <br />
+          ☀️️
+          <br />
+          73°F
+        </div>
+        <div class="col-2">
+          Sun
+          <br />
+          83°F
+          <br />
+          ☀️️
+          <br />
+          73°F
+        </div>
+      </div>
+    </div>
+
     <script src="src/app.js"></script>
   </body>
 </html>
