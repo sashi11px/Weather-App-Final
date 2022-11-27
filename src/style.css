@@ -1,0 +1,55 @@
+.btn-primary {
+  margin-right: 60px;
+}
+
+input {
+  background: white;
+  color: black;
+  border-radius: 5px;
+}
+
+.button {
+  color: black;
+}
+
+.city {
+  color: #000000;
+  margin-left: 10px;
+}
+
+.sun {
+  font-size: 55px;
+  margin-left: 10px;
+  margin-top: -5px;
+  margin-bottom: 9px;
+}
+.temp {
+  font-size: 65px;
+  color: #000000;
+  margin-left: 80px;
+  margin-top: -100px;
+}
+
+.row-2 {
+  color: #000000;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: -80px;
+}
+
+.conditions {
+  margin-top: -30px;
+  margin-left: 4px;
+}
+
+h1 {
+  color: #000000;
+}
+p {
+  font-size: 20px;
+  color: #000000;
+}
+
+span {
+  font-size: 25px;
+}
