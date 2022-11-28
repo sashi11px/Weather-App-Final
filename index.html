@@ -34,18 +34,36 @@
       <h1 id="maincity"> </h1>
       <h3>Tuesday Sept. 13, 2022</h3>
     </div>
-    <div class="sun">
-      ☀️️
+    <div class="row">
+      <div class="col-6">
+      <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+      alt="Partly Cloudy"/>
+      11°C | °F
+    </div>
+    <div class="col-6">
+      <ul>
+        <li>
+        Humidity: 73%
+        </li>
+        <li>
+          Precipitation: 0% 
+        </li>
+        <li>
+          Wind: 2km/h
+        </li>
+      </ul>
     </div>
 
-    <span id="maintemp"></span> <span class="units">°C | <a href="#">°F</a></span>
+    <span id="maintemp"></span> <span class="units"><a href ="#" id="celsius-link">°C</a> | <a href="#" id="fahrenheit-link">°F</a></span>
       
 
       <br />
       <div id="temperature-conditions">
         <ul>
-        <li><small>Humidity <span id="humidity"></span></small></li>
-     <li><small>Wind: <span id="wind"></small></span> km/hs</li> 
+        <li><small>Humidity: 73% <span id="humidity"></span></small></li>
+     <li><small>Wind: 2km/h <span id="wind"></small></span></li> 
+     <li><small>Precipitation: 0% <span id="precipitation"></small></span></li> 
+
       </div>
 
       <div class="row row-2">
@@ -95,6 +113,9 @@
           73°F
         </div>
       </div>
+      <br>
+    <a href="https://github.com/sashi11px/Weather-App-Final" target="_blank" 
+    >Open-source code </a> by Sasha Jackson
     </div>
 
     <script src="src/app.js"></script>

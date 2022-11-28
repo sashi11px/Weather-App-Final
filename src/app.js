@@ -56,12 +56,35 @@ function currentWeather(response) {
   let maincity = document.querySelector("#maincity");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#speed");
-  maintemp.innerHTML = `${Math.round(response.data.main.temp)}`;
+
+  celsiusTemperature = response.data.main.temp;
+
+  maintemp.innerHTML = `${Math.round(celsiusTemperature)}`;
   maincity.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
 }
 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#maintemp");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#maintemp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+search("Paros, Greece");

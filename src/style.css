@@ -58,3 +58,12 @@ span {
 h3 {
   font-size: 20px;
 }
+
+.units .active {
+  color: #000000;
+  cursor: default;
+}
+
+.units .active:hover {
+  text-decoration: none;
+}
