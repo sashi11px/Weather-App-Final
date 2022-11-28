@@ -24,6 +24,7 @@ input {
   margin-bottom: 9px;
 }
 .temp {
+  font-weight: 400;
   font-size: 65px;
   color: #000000;
   margin-left: 80px;
@@ -52,4 +53,8 @@ p {
 
 span {
   font-size: 25px;
+}
+
+h3 {
+  font-size: 15px;
 }

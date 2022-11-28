@@ -53,11 +53,11 @@ searchCity.addEventListener("submit", newCity);
 
 function currentWeather(response) {
   let maintemp = document.querySelector("#maintemp");
-  maintemp.innerHTML = `${Math.round(response.data.main.temp)}`;
   let maincity = document.querySelector("#maincity");
-  maincity.innerHTML = response.data.name;
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#speed");
+  maintemp.innerHTML = `${Math.round(response.data.main.temp)}`;
+  maincity.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
