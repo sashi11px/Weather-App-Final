@@ -56,4 +56,7 @@ function currentWeather(response) {
   maintemp.innerHTML = `${Math.round(response.data.main.temp)}`;
   let maincity = document.querySelector("#maincity");
   maincity.innerHTML = response.data.name;
+  let humidityElement = document.querySelector("#humidity");
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
 }
