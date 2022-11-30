@@ -67,3 +67,7 @@ h3 {
 .units .active:hover {
   text-decoration: none;
 }
+
+.temperature {
+  font-size: 45px;
+}
