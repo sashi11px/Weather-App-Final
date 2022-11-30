@@ -37,6 +37,7 @@ function newCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-text");
   let maincity = document.querySelector("#maincity");
+
   maincity.innerHTML = `${searchInput.value}`;
 
   search(searchInput.value);
@@ -56,6 +57,8 @@ function currentWeather(response) {
   let maincity = document.querySelector("#maincity");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#speed");
+  let descriptionElement = document.querySelector("#description");
+  let iconElement = document.querySelector("#icon");
 
   celsiusTemperature = response.data.main.temp;
 
@@ -64,6 +67,10 @@ function currentWeather(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function displayFahrenheitTemperature(event) {
