@@ -52,7 +52,7 @@ let searchCity = document.querySelector("form");
 searchCity.addEventListener("submit", newCity);
 
 function currentWeather(response) {
-  let maintemp = document.querySelector("#maintemp");
+  let maintemp = document.querySelector("#temperature");
   let maincity = document.querySelector("#maincity");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#speed");
@@ -69,13 +69,13 @@ function currentWeather(response) {
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  let temperatureElement = document.querySelector("#maintemp");
+  let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function displayCelsiusTemperature(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#maintemp");
+  let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
