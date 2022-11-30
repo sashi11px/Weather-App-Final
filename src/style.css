@@ -83,3 +83,15 @@ li {
   text-align: left;
   text-transform: capitalize;
 }
+
+.weather-forecast-date {
+  opacity: 0.5;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
+}
+
+.weather-forecast-temperatures {
+  font-size: 13px;
+}
