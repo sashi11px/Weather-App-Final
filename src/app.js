@@ -44,7 +44,7 @@ function newCity(event) {
 }
 
 function search(city) {
-  let apiKey = `97bed167ec49bff56e6c1b63daef9c86`;
+  let apiKey = `5aac6d0188c6f17d6d2bbe6591b6fef0`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(currentWeather);
 }
@@ -53,28 +53,34 @@ let searchCity = document.querySelector("form");
 searchCity.addEventListener("submit", newCity);
 
 function displayForecast(response) {
-  let forecast = response.data.daily;
+  console.log(response);
   let forecastElement = document.querySelector("#forecast");
+  let forecast = response.data.daily;
+  let forecastHTML = ` <div class="row"> `;
 
-  let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-              <div class="col-2">
-                <div class="weather-forecast-date">${day}</div>
-                <img
-                  src="http://openweathermap.org/img/wn/50d@2x.png"
-                  alt=""
-                  width="42"
-                />
-                <div class="weather-forecast-temperatures">
-                  <span class="weather-forecast-temperature-max"> 18° </span>
-                  <span class="weather-forecast-temperature-min"> 12° </span>
-                </div>
-              </div>
-            
-            `;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+      <div class="col-2">
+<div class="weather-forecast-date">${formatDay(forecastDay.time * 1000)}</div>
+        <img
+          src="${forecastDay.condition.icon_url}"
+          alt=""
+          width="50"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> <strong> ${Math.round(
+            forecastDay.temperature.maximum
+          )}° </strong>/ </span>
+          <span class="weather-forecast-temperature-min"> ${Math.round(
+            forecastDay.temperature.minimum
+          )}° </span>
+        </div>
+      </div>
+  `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -82,8 +88,8 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  let apiKey = "97bed167ec49bff56e6c1b63daef9c86";
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiKey = "5aac6d0188c6f17d6d2bbe6591b6fef0";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -132,4 +138,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Paros, Greece");
-displayForecast();
