@@ -1,15 +1,15 @@
 body {
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/057/405/original/weatherbg.jpeg?1670604181");
 }
-span.temperature {
+#temperature {
   font-size: 45px;
 }
 .btn-primary {
   margin-right: 60px;
 }
 
-.card-body {
-  opacity: 80px;
+a {
+  text-decoration: none;
 }
 
 input {
@@ -68,13 +68,19 @@ h6 {
 }
 
 .strong {
-  font-size: 35px;
+  font-size: 65px;
 }
 
 .units .active {
   color: #000000;
   cursor: default;
   text-decoration: none;
+}
+
+.units {
+  position: absolute;
+  margin: 21px;
+  margin-left: auto;
 }
 
 .units .active:hover {
@@ -92,7 +98,8 @@ li {
 }
 
 .weather-forecast-date {
-  opacity: 0.5;
+  opacity: 0.4;
+  padding-left: 20px;
 }
 
 .weather-forecast-temperature-min {
@@ -101,4 +108,5 @@ li {
 
 .weather-forecast-temperatures {
   font-size: 13px;
+  padding-left: 11px;
 }
